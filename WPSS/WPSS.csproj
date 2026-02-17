@@ -1,0 +1,1606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1AC44F4E-8832-45A3-8A00-9D53176B9B6D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WPSS</RootNamespace>
+    <AssemblyName>WPSS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>2</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.10201.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL" />
+    <Reference Include="EPPlus">
+      <HintPath>bin\Debug\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Debug\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Debug\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Debug\System.configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Debug\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Debug\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Debug\System.EnterpriseServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mobile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Debug\System.Web.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Debug\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Debug\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Debug\System.XML.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="XizheC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\XizheC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BaseInfo\CompanyInfo.aspx" />
+    <Content Include="BaseInfo\CompanyInfoP.aspx" />
+    <Content Include="BaseInfo\CompanyInfoPS.aspx" />
+    <Content Include="BaseInfo\CompanyInfoT.aspx" />
+    <Content Include="BaseInfo\CompanyInfoX.aspx" />
+    <Content Include="BaseInfo\DEPART.aspx" />
+    <Content Include="BaseInfo\DEPARTT.aspx" />
+    <Content Include="BaseInfo\EmployeeInfo.aspx" />
+    <Content Include="BaseInfo\EmployeeInfoT.aspx" />
+    <Content Include="BaseInfo\ReceivingAndDelivery.aspx" />
+    <Content Include="BaseInfo\ReceivingAndDeliveryT.aspx" />
+    <Content Include="BaseInfo\set_showname.aspx" />
+    <Content Include="BaseInfo\WareInfo.aspx" />
+    <Content Include="BaseInfo\WareInfoT.aspx" />
+    <Content Include="BaseInfo\WebService1.asmx" />
+    <Content Include="bin\EPPlus.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Chart.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Diagnostics.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Document.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Document.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Excel.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Html.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Image.Unsafe.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Image.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Pdf.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Rdf.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Word.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Xaml.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Extensibility.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.v10.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Viewer.resources.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Web.v10.dll" />
+    <Content Include="bin\GrapeCity.LicenseService.ActiveReports.v10.dll" />
+    <Content Include="Css\120610.css" />
+    <Content Include="Css\130426b.css" />
+    <Content Include="Css\c072701.css" />
+    <Content Include="Css\c120807o.css" />
+    <Content Include="Css\S130424.css" />
+    <Content Include="Css\S131017.css" />
+    <Content Include="Css\S190320.css" />
+    <Content Include="Css\SSBase.css" />
+    <Content Include="Css\view.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="FINANCIAL_MANAGE\ADVANCE_PAYMENT.aspx" />
+    <Content Include="FINANCIAL_MANAGE\ADVANCE_PAYMENTT.aspx" />
+    <Content Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLES.aspx" />
+    <Content Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLEST.aspx" />
+    <Content Include="FINANCIAL_MANAGE\PAYMENT_ORDER.aspx" />
+    <Content Include="FINANCIAL_MANAGE\PAYMENT_ORDERT.aspx" />
+    <Content Include="FINANCIAL_MANAGE\PAYMENT_SEARCH.aspx" />
+    <Content Include="FINANCIAL_MANAGE\PURCHASE_INVOICET.aspx" />
+    <Content Include="FINANCIAL_MANAGE\RECEIVABLES.aspx" />
+    <Content Include="FINANCIAL_MANAGE\RECEIVABLEST.aspx" />
+    <Content Include="FINANCIAL_MANAGE\RECEIVABLES_ORDER.aspx" />
+    <Content Include="FINANCIAL_MANAGE\RECEIVABLES_ORDERT.aspx" />
+    <Content Include="FINANCIAL_MANAGE\REQUEST_MONEY.aspx" />
+    <Content Include="FINANCIAL_MANAGE\REQUEST_MONEYT.aspx" />
+    <Content Include="FINANCIAL_MANAGE\SALE_INVOICET.aspx" />
+    <Content Include="Image\1.png" />
+    <Content Include="Image\10.png" />
+    <Content Include="Image\11.png" />
+    <Content Include="Image\12.png" />
+    <Content Include="Image\13.png" />
+    <Content Include="Image\14.png" />
+    <Content Include="Image\15.png" />
+    <Content Include="Image\16.png" />
+    <Content Include="Image\17.png" />
+    <Content Include="Image\18.png" />
+    <Content Include="Image\19.png" />
+    <Content Include="Image\2.png" />
+    <Content Include="Image\20.png" />
+    <Content Include="Image\201.png" />
+    <Content Include="Image\21.png" />
+    <Content Include="Image\211.png" />
+    <Content Include="Image\22.png" />
+    <Content Include="Image\23.png" />
+    <Content Include="Image\24.png" />
+    <Content Include="Image\25.png" />
+    <Content Include="Image\26.png" />
+    <Content Include="Image\27.png" />
+    <Content Include="Image\28.png" />
+    <Content Include="Image\29.png" />
+    <Content Include="Image\3.png" />
+    <Content Include="Image\30.png" />
+    <Content Include="Image\31.png" />
+    <Content Include="Image\32.png" />
+    <Content Include="Image\33.png" />
+    <Content Include="Image\34.png" />
+    <Content Include="Image\35.png" />
+    <Content Include="Image\36.png" />
+    <Content Include="Image\37.png" />
+    <Content Include="Image\38.png" />
+    <Content Include="Image\39.png" />
+    <Content Include="Image\4.png" />
+    <Content Include="Image\40.png" />
+    <Content Include="Image\41.png" />
+    <Content Include="Image\42.png" />
+    <Content Include="Image\43.png" />
+    <Content Include="Image\44.png" />
+    <Content Include="Image\45.png" />
+    <Content Include="Image\46.png" />
+    <Content Include="Image\47.png" />
+    <Content Include="Image\48.png" />
+    <Content Include="Image\5.png" />
+    <Content Include="Image\50.png" />
+    <Content Include="Image\500.png" />
+    <Content Include="Image\51.png" />
+    <Content Include="Image\52.png" />
+    <Content Include="Image\53.png" />
+    <Content Include="Image\54.png" />
+    <Content Include="Image\55.png" />
+    <Content Include="Image\56.png" />
+    <Content Include="Image\57.png" />
+    <Content Include="Image\58.png" />
+    <Content Include="Image\59.png" />
+    <Content Include="Image\6.png" />
+    <Content Include="Image\60.png" />
+    <Content Include="Image\61.png" />
+    <Content Include="Image\63.png" />
+    <Content Include="Image\64.png" />
+    <Content Include="Image\65.png" />
+    <Content Include="Image\66.png" />
+    <Content Include="Image\67.png" />
+    <Content Include="Image\68.png" />
+    <Content Include="Image\69.png" />
+    <Content Include="Image\7.png" />
+    <Content Include="Image\70.png" />
+    <Content Include="Image\71.png" />
+    <Content Include="Image\72.png" />
+    <Content Include="Image\73.png" />
+    <Content Include="Image\74.png" />
+    <Content Include="Image\75.png" />
+    <Content Include="Image\76.png" />
+    <Content Include="Image\77.png" />
+    <Content Include="Image\78.png" />
+    <Content Include="Image\79.png" />
+    <Content Include="Image\8.png" />
+    <Content Include="Image\80.png" />
+    <Content Include="Image\81.png" />
+    <Content Include="Image\82.png" />
+    <Content Include="Image\83.png" />
+    <Content Include="Image\84.png" />
+    <Content Include="Image\85.png" />
+    <Content Include="Image\86.png" />
+    <Content Include="Image\87.png" />
+    <Content Include="Image\88.png" />
+    <Content Include="Image\89.png" />
+    <Content Include="Image\9.png" />
+    <Content Include="Image\90.png" />
+    <Content Include="Image\91.png" />
+    <Content Include="Image\92.png" />
+    <Content Include="Image\93.png" />
+    <Content Include="Image\bg.png" />
+    <Content Include="Image\btnAdd.png" />
+    <Content Include="Image\btnDelete.png" />
+    <Content Include="Image\btnExit.png" />
+    <Content Include="Image\btnlogin4.png" />
+    <Content Include="Image\btnPrint.png" />
+    <Content Include="Image\btnSave.png" />
+    <Content Include="Image\btnSearch.png" />
+    <Content Include="Image\Excel_big.png" />
+    <Content Include="Image\loading.gif" />
+    <Content Include="Image\login.png" />
+    <Content Include="Image\logo euj2.jpg" />
+    <Content Include="Image\logo.jpg" />
+    <Content Include="Image\logo2.png" />
+    <Content Include="Image\logo_index.png" />
+    <Content Include="Image\top.jpg" />
+    <Content Include="Image\Untitled-1.jpg" />
+    <Content Include="Image\x1.jpg" />
+    <Content Include="Image\x85.png" />
+    <Content Include="Image\x86.png" />
+    <Content Include="Image\x87.png" />
+    <Content Include="Image\x88.png" />
+    <Content Include="Image\x89.png" />
+    <Content Include="Image\x90.png" />
+    <Content Include="Image\xico\1.png" />
+    <Content Include="Image\xico\10.png" />
+    <Content Include="Image\xico\10s.png" />
+    <Content Include="Image\xico\2.png" />
+    <Content Include="Image\xico\20.png" />
+    <Content Include="Image\xico\20s.png" />
+    <Content Include="Image\xico\3.png" />
+    <Content Include="Image\xico\4.png" />
+    <Content Include="Image\xico\5.png" />
+    <Content Include="Image\xico\6.png" />
+    <Content Include="Image\xico\7.png" />
+    <Content Include="Image\xico\8.png" />
+    <Content Include="Image\xico\big.png" />
+    <Content Include="Image\xico\initial.png" />
+    <Content Include="Image\xico\login.png" />
+    <Content Include="Image\xico\login3.png" />
+    <Content Include="Image\xico\logo_index.png" />
+    <Content Include="Image\xico\x2.png" />
+    <Content Include="Image\xico\x3.png" />
+    <Content Include="Image\xico\x5.png" />
+    <Content Include="Image\xico\x6.png" />
+    <Content Include="Js\Syunew3.js" />
+    <Content Include="My97DatePicker\calendar.js" />
+    <Content Include="My97DatePicker\config.js" />
+    <Content Include="My97DatePicker\lang\en.js" />
+    <Content Include="My97DatePicker\lang\zh-cn.js" />
+    <Content Include="My97DatePicker\lang\zh-tw.js" />
+    <Content Include="My97DatePicker\My97DatePicker.htm" />
+    <Content Include="My97DatePicker\skin\datePicker.gif" />
+    <Content Include="My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="My97DatePicker\skin\default\img.gif" />
+    <Content Include="My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="My97DatePicker\WdatePicker.js" />
+    <Content Include="My97DatePicker\使用说明.txt" />
+    <Content Include="ProductTrace\flow.aspx" />
+    <Content Include="ProductTrace\flowt.aspx" />
+    <Content Include="ProductTrace\parameter.aspx" />
+    <Content Include="ProductTrace\parameter2.aspx" />
+    <Content Include="ProductTrace\parametert.aspx" />
+    <Content Include="ProductTrace\step.aspx" />
+    <Content Include="ProductTrace\step2.aspx" />
+    <Content Include="ProductTrace\stept.aspx" />
+    <Content Include="ProductTrace\trace.aspx" />
+    <Content Include="ProductTrace\tracet.aspx" />
+    <Content Include="ProductTrace\utable.aspx" />
+    <Content Include="ProductTrace\utable2.aspx" />
+    <Content Include="ProductTrace\utablet.aspx" />
+    <Content Include="PurchaseManage\PISI.aspx" />
+    <Content Include="PurchaseManage\Purchase.aspx" />
+    <Content Include="PurchaseManage\PurchaseGode.aspx" />
+    <Content Include="PurchaseManage\PurchaseGodeT.aspx" />
+    <Content Include="PurchaseManage\PurchaseSearch.aspx" />
+    <Content Include="PurchaseManage\PurchaseT.aspx" />
+    <Content Include="PurchaseManage\PurchaseUnitPrice.aspx" />
+    <Content Include="PurchaseManage\PurchaseUnitPriceT.aspx" />
+    <Content Include="PurchaseManage\Return.aspx" />
+    <Content Include="PurchaseManage\ReturnT.aspx" />
+    <Content Include="PurchaseManage\SupplierInfo.aspx" />
+    <Content Include="PurchaseManage\SupplierInfoT.aspx" />
+    <Content Include="PurchaseManage\SuReconcile.aspx" />
+    <Content Include="PurchaseManage\SuReconcileT.aspx" />
+    <Content Include="QUALITY_MANAGE\QUALITY_INFO.aspx" />
+    <Content Include="QUALITY_MANAGE\QUALITY_INFOT.aspx" />
+    <Content Include="Js\J13102101.js" />
+    <Content Include="Main.aspx" />
+    <Content Include="SellManage\CuReconcile.aspx" />
+    <Content Include="SellManage\CuReconcileT.aspx" />
+    <Content Include="SellManage\CustomerInfo.aspx" />
+    <Content Include="SellManage\CustomerInfoT.aspx" />
+    <Content Include="SellManage\OFFERSEARCH.aspx" />
+    <Content Include="SellManage\OfferSearchT.aspx" />
+    <Content Include="SellManage\Order.aspx" />
+    <Content Include="SellManage\OrderSearch.aspx" />
+    <Content Include="SellManage\OrderT.aspx" />
+    <Content Include="SellManage\SellReceivablesT.aspx" />
+    <Content Include="SellManage\SellReturn.aspx" />
+    <Content Include="SellManage\SellReturnT.aspx" />
+    <Content Include="SellManage\SellTable.aspx" />
+    <Content Include="SellManage\SellTableT.aspx" />
+    <Content Include="SellManage\SellUnitPrice.aspx" />
+    <Content Include="SellManage\SellUnitPriceT.aspx" />
+    <Content Include="StockManage\MISC_GODET.aspx" />
+    <Content Include="StockManage\MISC_PICKINGT.aspx" />
+    <Content Include="StockManage\pickingAndGode.aspx" />
+    <Content Include="StockManage\StorageCase.aspx" />
+    <Content Include="StockManage\StorageInfo.aspx" />
+    <Content Include="StockManage\StorageInfoT.aspx" />
+    <Content Include="UserManage\EditPwd.aspx" />
+    <Content Include="UserManage\EditRight.aspx" />
+    <Content Include="UserManage\EditRightT.aspx" />
+    <Content Include="UserManage\LIMITE_SEARCH.aspx" />
+    <Content Include="UserManage\LIMITE_SEARCHT.aspx" />
+    <Content Include="UserManage\UserInfo.aspx" />
+    <Content Include="UserManage\UserInfoT.aspx" />
+    <Content Include="Validate.aspx" />
+    <Content Include="VIEW.aspx" />
+    <Content Include="WareNature\ASSIGN_STACKUP.aspx" />
+    <Content Include="WareNature\ASSIGN_STACKUPT.aspx" />
+    <Content Include="WareNature\BGA_DESIGN.aspx" />
+    <Content Include="WareNature\BGA_DESIGNT.aspx" />
+    <Content Include="WareNature\BIGANDSMALL_PANEL.aspx" />
+    <Content Include="WareNature\BIGANDSMALL_PANELT.aspx" />
+    <Content Include="WareNature\Character_Color.aspx" />
+    <Content Include="WareNature\Character_ColorT.aspx" />
+    <Content Include="WareNature\Circuit_Spec.aspx" />
+    <Content Include="WareNature\Circuit_SpecT.aspx" />
+    <Content Include="WareNature\COPPER_NEED.aspx" />
+    <Content Include="WareNature\COPPER_NEEDT.aspx" />
+    <Content Include="WareNature\Core_Copper.aspx" />
+    <Content Include="WareNature\Core_CopperT.aspx" />
+    <Content Include="WareNature\DEFECT.aspx" />
+    <Content Include="WareNature\DEFECTT.aspx" />
+    <Content Include="WareNature\HYPOTENUSE_ANGLE.aspx" />
+    <Content Include="WareNature\HYPOTENUSE_ANGLET.aspx" />
+    <Content Include="WareNature\IF_HYPOTENUSE.aspx" />
+    <Content Include="WareNature\IF_HYPOTENUSET.aspx" />
+    <Content Include="WareNature\IMPEDANCE.aspx" />
+    <Content Include="WareNature\IMPEDANCET.aspx" />
+    <Content Include="WareNature\MINIMUM_HOLE.aspx" />
+    <Content Include="WareNature\MINIMUM_HOLET.aspx" />
+    <Content Include="WareNature\MOLDING_STYLE.aspx" />
+    <Content Include="WareNature\MOLDING_STYLET.aspx" />
+    <Content Include="WareNature\MOLDING_TOLERANCE.aspx" />
+    <Content Include="WareNature\MOLDING_TOLERANCET.aspx" />
+    <Content Include="WareNature\Out_Copper.aspx" />
+    <Content Include="WareNature\Out_CopperT.aspx" />
+    <Content Include="WareNature\PANEL.aspx" />
+    <Content Include="WareNature\PANELT.aspx" />
+    <Content Include="WareNature\PANEL_NEED.aspx" />
+    <Content Include="WareNature\PANEL_NEEDT.aspx" />
+    <Content Include="WareNature\PLANK_THICKNESS.aspx" />
+    <Content Include="WareNature\PLANK_THICKNESST.aspx" />
+    <Content Include="WareNature\PLANK_TOLERANCE.aspx" />
+    <Content Include="WareNature\PLANK_TOLERANCET.aspx" />
+    <Content Include="WareNature\PLANK_TYPET.aspx" />
+    <Content Include="WareNature\PLANK_TYPE.aspx" />
+    <Content Include="WareNature\Solder_Mask.aspx" />
+    <Content Include="WareNature\Solder_MaskT.aspx" />
+    <Content Include="WareNature\Spec.aspx" />
+    <Content Include="WareNature\SpecT.aspx" />
+    <Content Include="WareNature\Surface_Thickness.aspx" />
+    <Content Include="WareNature\Surface_ThicknessT.aspx" />
+    <Content Include="WareNature\Surface_Treatment.aspx" />
+    <Content Include="WareNature\Surface_TreatmentT.aspx" />
+    <Content Include="WareNature\THICKNESS_COPPER.aspx" />
+    <Content Include="WareNature\THICKNESS_COPPERT.aspx" />
+    <Content Include="WareNature\VCUT_ANGLE.aspx" />
+    <Content Include="WareNature\VCUT_ANGLET.aspx" />
+    <Content Include="WareNature\VCUT_DISABLED.aspx" />
+    <Content Include="WareNature\VCUT_DISABLEDT.aspx" />
+    <Content Include="WDate.aspx" />
+    <Content Include="WebService1.asmx" />
+    <Content Include="xizheimg.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseInfo\CompanyInfo.aspx.cs">
+      <DependentUpon>CompanyInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\CompanyInfo.aspx.designer.cs">
+      <DependentUpon>CompanyInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\CompanyInfoP.aspx.cs">
+      <DependentUpon>CompanyInfoP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\CompanyInfoP.aspx.designer.cs">
+      <DependentUpon>CompanyInfoP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\CompanyInfoPS.aspx.cs">
+      <DependentUpon>CompanyInfoPS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\CompanyInfoPS.aspx.designer.cs">
+      <DependentUpon>CompanyInfoPS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\CompanyInfoT.aspx.cs">
+      <DependentUpon>CompanyInfoT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\CompanyInfoT.aspx.designer.cs">
+      <DependentUpon>CompanyInfoT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\CompanyInfoX.aspx.cs">
+      <DependentUpon>CompanyInfoX.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\CompanyInfoX.aspx.designer.cs">
+      <DependentUpon>CompanyInfoX.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\DEPART.aspx.cs">
+      <DependentUpon>DEPART.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\DEPART.aspx.designer.cs">
+      <DependentUpon>DEPART.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\DEPARTT.aspx.cs">
+      <DependentUpon>DEPARTT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\DEPARTT.aspx.designer.cs">
+      <DependentUpon>DEPARTT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\EmployeeInfo.aspx.cs">
+      <DependentUpon>EmployeeInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\EmployeeInfo.aspx.designer.cs">
+      <DependentUpon>EmployeeInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\EmployeeInfoT.aspx.cs">
+      <DependentUpon>EmployeeInfoT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\EmployeeInfoT.aspx.designer.cs">
+      <DependentUpon>EmployeeInfoT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\ReceivingAndDelivery.aspx.cs">
+      <DependentUpon>ReceivingAndDelivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\ReceivingAndDelivery.aspx.designer.cs">
+      <DependentUpon>ReceivingAndDelivery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\ReceivingAndDeliveryT.aspx.cs">
+      <DependentUpon>ReceivingAndDeliveryT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\ReceivingAndDeliveryT.aspx.designer.cs">
+      <DependentUpon>ReceivingAndDeliveryT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\set_showname.aspx.cs">
+      <DependentUpon>set_showname.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\set_showname.aspx.designer.cs">
+      <DependentUpon>set_showname.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\WareInfo.aspx.cs">
+      <DependentUpon>WareInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\WareInfo.aspx.designer.cs">
+      <DependentUpon>WareInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\WareInfoT.aspx.cs">
+      <DependentUpon>WareInfoT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseInfo\WareInfoT.aspx.designer.cs">
+      <DependentUpon>WareInfoT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseInfo\WebService1.asmx.cs">
+      <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_PAYMENT.aspx.cs">
+      <DependentUpon>ADVANCE_PAYMENT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_PAYMENT.aspx.designer.cs">
+      <DependentUpon>ADVANCE_PAYMENT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_PAYMENTT.aspx.cs">
+      <DependentUpon>ADVANCE_PAYMENTT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_PAYMENTT.aspx.designer.cs">
+      <DependentUpon>ADVANCE_PAYMENTT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLES.aspx.cs">
+      <DependentUpon>ADVANCE_RECEIVABLES.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLES.aspx.designer.cs">
+      <DependentUpon>ADVANCE_RECEIVABLES.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLEST.aspx.cs">
+      <DependentUpon>ADVANCE_RECEIVABLEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\ADVANCE_RECEIVABLEST.aspx.designer.cs">
+      <DependentUpon>ADVANCE_RECEIVABLEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PAYMENT_ORDER.aspx.cs">
+      <DependentUpon>PAYMENT_ORDER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PAYMENT_ORDER.aspx.designer.cs">
+      <DependentUpon>PAYMENT_ORDER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PAYMENT_ORDERT.aspx.cs">
+      <DependentUpon>PAYMENT_ORDERT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PAYMENT_ORDERT.aspx.designer.cs">
+      <DependentUpon>PAYMENT_ORDERT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PAYMENT_SEARCH.aspx.cs">
+      <DependentUpon>PAYMENT_SEARCH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PAYMENT_SEARCH.aspx.designer.cs">
+      <DependentUpon>PAYMENT_SEARCH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PURCHASE_INVOICET.aspx.cs">
+      <DependentUpon>PURCHASE_INVOICET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\PURCHASE_INVOICET.aspx.designer.cs">
+      <DependentUpon>PURCHASE_INVOICET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES.aspx.cs">
+      <DependentUpon>RECEIVABLES.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES.aspx.designer.cs">
+      <DependentUpon>RECEIVABLES.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLEST.aspx.cs">
+      <DependentUpon>RECEIVABLEST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLEST.aspx.designer.cs">
+      <DependentUpon>RECEIVABLEST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES_ORDER.aspx.cs">
+      <DependentUpon>RECEIVABLES_ORDER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES_ORDER.aspx.designer.cs">
+      <DependentUpon>RECEIVABLES_ORDER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES_ORDERT.aspx.cs">
+      <DependentUpon>RECEIVABLES_ORDERT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\RECEIVABLES_ORDERT.aspx.designer.cs">
+      <DependentUpon>RECEIVABLES_ORDERT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\REQUEST_MONEY.aspx.cs">
+      <DependentUpon>REQUEST_MONEY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\REQUEST_MONEY.aspx.designer.cs">
+      <DependentUpon>REQUEST_MONEY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\REQUEST_MONEYT.aspx.cs">
+      <DependentUpon>REQUEST_MONEYT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\REQUEST_MONEYT.aspx.designer.cs">
+      <DependentUpon>REQUEST_MONEYT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\SALE_INVOICET.aspx.cs">
+      <DependentUpon>SALE_INVOICET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FINANCIAL_MANAGE\SALE_INVOICET.aspx.designer.cs">
+      <DependentUpon>SALE_INVOICET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\flow.aspx.cs">
+      <DependentUpon>flow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\flow.aspx.designer.cs">
+      <DependentUpon>flow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\flowt.aspx.cs">
+      <DependentUpon>flowt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\flowt.aspx.designer.cs">
+      <DependentUpon>flowt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\parameter.aspx.cs">
+      <DependentUpon>parameter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\parameter.aspx.designer.cs">
+      <DependentUpon>parameter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\parameter2.aspx.cs">
+      <DependentUpon>parameter2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\parameter2.aspx.designer.cs">
+      <DependentUpon>parameter2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\parametert.aspx.cs">
+      <DependentUpon>parametert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\parametert.aspx.designer.cs">
+      <DependentUpon>parametert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\step.aspx.cs">
+      <DependentUpon>step.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\step.aspx.designer.cs">
+      <DependentUpon>step.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\step2.aspx.cs">
+      <DependentUpon>step2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\step2.aspx.designer.cs">
+      <DependentUpon>step2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\stept.aspx.cs">
+      <DependentUpon>stept.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\stept.aspx.designer.cs">
+      <DependentUpon>stept.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\trace.aspx.cs">
+      <DependentUpon>trace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\trace.aspx.designer.cs">
+      <DependentUpon>trace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\tracet.aspx.cs">
+      <DependentUpon>tracet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\tracet.aspx.designer.cs">
+      <DependentUpon>tracet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\utable.aspx.cs">
+      <DependentUpon>utable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\utable.aspx.designer.cs">
+      <DependentUpon>utable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\utable2.aspx.cs">
+      <DependentUpon>utable2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\utable2.aspx.designer.cs">
+      <DependentUpon>utable2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductTrace\utablet.aspx.cs">
+      <DependentUpon>utablet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductTrace\utablet.aspx.designer.cs">
+      <DependentUpon>utablet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\PISI.aspx.cs">
+      <DependentUpon>PISI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\PISI.aspx.designer.cs">
+      <DependentUpon>PISI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\Purchase.aspx.cs">
+      <DependentUpon>Purchase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\Purchase.aspx.designer.cs">
+      <DependentUpon>Purchase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseGode.aspx.cs">
+      <DependentUpon>PurchaseGode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseGode.aspx.designer.cs">
+      <DependentUpon>PurchaseGode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseGodeT.aspx.cs">
+      <DependentUpon>PurchaseGodeT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseGodeT.aspx.designer.cs">
+      <DependentUpon>PurchaseGodeT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseSearch.aspx.cs">
+      <DependentUpon>PurchaseSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseSearch.aspx.designer.cs">
+      <DependentUpon>PurchaseSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseT.aspx.cs">
+      <DependentUpon>PurchaseT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseT.aspx.designer.cs">
+      <DependentUpon>PurchaseT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseUnitPrice.aspx.cs">
+      <DependentUpon>PurchaseUnitPrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseUnitPrice.aspx.designer.cs">
+      <DependentUpon>PurchaseUnitPrice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseUnitPriceT.aspx.cs">
+      <DependentUpon>PurchaseUnitPriceT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\PurchaseUnitPriceT.aspx.designer.cs">
+      <DependentUpon>PurchaseUnitPriceT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\Return.aspx.cs">
+      <DependentUpon>Return.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\Return.aspx.designer.cs">
+      <DependentUpon>Return.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\ReturnT.aspx.cs">
+      <DependentUpon>ReturnT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\ReturnT.aspx.designer.cs">
+      <DependentUpon>ReturnT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\SupplierInfo.aspx.cs">
+      <DependentUpon>SupplierInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\SupplierInfo.aspx.designer.cs">
+      <DependentUpon>SupplierInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\SupplierInfoT.aspx.cs">
+      <DependentUpon>SupplierInfoT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\SupplierInfoT.aspx.designer.cs">
+      <DependentUpon>SupplierInfoT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\SuReconcile.aspx.cs">
+      <DependentUpon>SuReconcile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\SuReconcile.aspx.designer.cs">
+      <DependentUpon>SuReconcile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseManage\SuReconcileT.aspx.cs">
+      <DependentUpon>SuReconcileT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseManage\SuReconcileT.aspx.designer.cs">
+      <DependentUpon>SuReconcileT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QUALITY_MANAGE\QUALITY_INFO.aspx.cs">
+      <DependentUpon>QUALITY_INFO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QUALITY_MANAGE\QUALITY_INFO.aspx.designer.cs">
+      <DependentUpon>QUALITY_INFO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QUALITY_MANAGE\QUALITY_INFOT.aspx.cs">
+      <DependentUpon>QUALITY_INFOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QUALITY_MANAGE\QUALITY_INFOT.aspx.designer.cs">
+      <DependentUpon>QUALITY_INFOT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SellManage\CuReconcile.aspx.cs">
+      <DependentUpon>CuReconcile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\CuReconcile.aspx.designer.cs">
+      <DependentUpon>CuReconcile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\CuReconcileT.aspx.cs">
+      <DependentUpon>CuReconcileT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\CuReconcileT.aspx.designer.cs">
+      <DependentUpon>CuReconcileT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\CustomerInfo.aspx.cs">
+      <DependentUpon>CustomerInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\CustomerInfo.aspx.designer.cs">
+      <DependentUpon>CustomerInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\CustomerInfoT.aspx.cs">
+      <DependentUpon>CustomerInfoT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\CustomerInfoT.aspx.designer.cs">
+      <DependentUpon>CustomerInfoT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\OFFERSEARCH.aspx.cs">
+      <DependentUpon>OFFERSEARCH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\OFFERSEARCH.aspx.designer.cs">
+      <DependentUpon>OFFERSEARCH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\OfferSearchT.aspx.cs">
+      <DependentUpon>OfferSearchT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\OfferSearchT.aspx.designer.cs">
+      <DependentUpon>OfferSearchT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\OrderSearch.aspx.cs">
+      <DependentUpon>OrderSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\OrderSearch.aspx.designer.cs">
+      <DependentUpon>OrderSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\OrderT.aspx.cs">
+      <DependentUpon>OrderT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\OrderT.aspx.designer.cs">
+      <DependentUpon>OrderT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\SellReceivablesT.aspx.cs">
+      <DependentUpon>SellReceivablesT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\SellReceivablesT.aspx.designer.cs">
+      <DependentUpon>SellReceivablesT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\SellReturn.aspx.cs">
+      <DependentUpon>SellReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\SellReturn.aspx.designer.cs">
+      <DependentUpon>SellReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\SellReturnT.aspx.cs">
+      <DependentUpon>SellReturnT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\SellReturnT.aspx.designer.cs">
+      <DependentUpon>SellReturnT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\SellTable.aspx.cs">
+      <DependentUpon>SellTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\SellTable.aspx.designer.cs">
+      <DependentUpon>SellTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\SellTableT.aspx.cs">
+      <DependentUpon>SellTableT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\SellTableT.aspx.designer.cs">
+      <DependentUpon>SellTableT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\SellUnitPrice.aspx.cs">
+      <DependentUpon>SellUnitPrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\SellUnitPrice.aspx.designer.cs">
+      <DependentUpon>SellUnitPrice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SellManage\SellUnitPriceT.aspx.cs">
+      <DependentUpon>SellUnitPriceT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SellManage\SellUnitPriceT.aspx.designer.cs">
+      <DependentUpon>SellUnitPriceT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoftKey.cs" />
+    <Compile Include="StockManage\MISC_GODET.aspx.cs">
+      <DependentUpon>MISC_GODET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StockManage\MISC_GODET.aspx.designer.cs">
+      <DependentUpon>MISC_GODET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StockManage\MISC_PICKINGT.aspx.cs">
+      <DependentUpon>MISC_PICKINGT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StockManage\MISC_PICKINGT.aspx.designer.cs">
+      <DependentUpon>MISC_PICKINGT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StockManage\pickingAndGode.aspx.cs">
+      <DependentUpon>pickingAndGode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StockManage\pickingAndGode.aspx.designer.cs">
+      <DependentUpon>pickingAndGode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StockManage\StorageCase.aspx.cs">
+      <DependentUpon>StorageCase.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StockManage\StorageCase.aspx.designer.cs">
+      <DependentUpon>StorageCase.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StockManage\StorageInfo.aspx.cs">
+      <DependentUpon>StorageInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StockManage\StorageInfo.aspx.designer.cs">
+      <DependentUpon>StorageInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StockManage\StorageInfoT.aspx.cs">
+      <DependentUpon>StorageInfoT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StockManage\StorageInfoT.aspx.designer.cs">
+      <DependentUpon>StorageInfoT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\EditPwd.aspx.cs">
+      <DependentUpon>EditPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\EditPwd.aspx.designer.cs">
+      <DependentUpon>EditPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\EditRight.aspx.cs">
+      <DependentUpon>EditRight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\EditRight.aspx.designer.cs">
+      <DependentUpon>EditRight.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\EditRightT.aspx.cs">
+      <DependentUpon>EditRightT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\EditRightT.aspx.designer.cs">
+      <DependentUpon>EditRightT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\LIMITE_SEARCH.aspx.cs">
+      <DependentUpon>LIMITE_SEARCH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\LIMITE_SEARCH.aspx.designer.cs">
+      <DependentUpon>LIMITE_SEARCH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\LIMITE_SEARCHT.aspx.cs">
+      <DependentUpon>LIMITE_SEARCHT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\LIMITE_SEARCHT.aspx.designer.cs">
+      <DependentUpon>LIMITE_SEARCHT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\UserInfo.aspx.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\UserInfo.aspx.designer.cs">
+      <DependentUpon>UserInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManage\UserInfoT.aspx.cs">
+      <DependentUpon>UserInfoT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManage\UserInfoT.aspx.designer.cs">
+      <DependentUpon>UserInfoT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Validate.aspx.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Validate.aspx.designer.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ValuesController1.cs" />
+    <Compile Include="VIEW.aspx.cs">
+      <DependentUpon>VIEW.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VIEW.aspx.designer.cs">
+      <DependentUpon>VIEW.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\ASSIGN_STACKUP.aspx.cs">
+      <DependentUpon>ASSIGN_STACKUP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\ASSIGN_STACKUP.aspx.designer.cs">
+      <DependentUpon>ASSIGN_STACKUP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\ASSIGN_STACKUPT.aspx.cs">
+      <DependentUpon>ASSIGN_STACKUPT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\ASSIGN_STACKUPT.aspx.designer.cs">
+      <DependentUpon>ASSIGN_STACKUPT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\BGA_DESIGN.aspx.cs">
+      <DependentUpon>BGA_DESIGN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\BGA_DESIGN.aspx.designer.cs">
+      <DependentUpon>BGA_DESIGN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\BGA_DESIGNT.aspx.cs">
+      <DependentUpon>BGA_DESIGNT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\BGA_DESIGNT.aspx.designer.cs">
+      <DependentUpon>BGA_DESIGNT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\BIGANDSMALL_PANEL.aspx.cs">
+      <DependentUpon>BIGANDSMALL_PANEL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\BIGANDSMALL_PANEL.aspx.designer.cs">
+      <DependentUpon>BIGANDSMALL_PANEL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\BIGANDSMALL_PANELT.aspx.cs">
+      <DependentUpon>BIGANDSMALL_PANELT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\BIGANDSMALL_PANELT.aspx.designer.cs">
+      <DependentUpon>BIGANDSMALL_PANELT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Character_Color.aspx.cs">
+      <DependentUpon>Character_Color.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Character_Color.aspx.designer.cs">
+      <DependentUpon>Character_Color.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Character_ColorT.aspx.cs">
+      <DependentUpon>Character_ColorT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Character_ColorT.aspx.designer.cs">
+      <DependentUpon>Character_ColorT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Circuit_Spec.aspx.cs">
+      <DependentUpon>Circuit_Spec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Circuit_Spec.aspx.designer.cs">
+      <DependentUpon>Circuit_Spec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Circuit_SpecT.aspx.cs">
+      <DependentUpon>Circuit_SpecT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Circuit_SpecT.aspx.designer.cs">
+      <DependentUpon>Circuit_SpecT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\COPPER_NEED.aspx.cs">
+      <DependentUpon>COPPER_NEED.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\COPPER_NEED.aspx.designer.cs">
+      <DependentUpon>COPPER_NEED.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\COPPER_NEEDT.aspx.cs">
+      <DependentUpon>COPPER_NEEDT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\COPPER_NEEDT.aspx.designer.cs">
+      <DependentUpon>COPPER_NEEDT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Core_Copper.aspx.cs">
+      <DependentUpon>Core_Copper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Core_Copper.aspx.designer.cs">
+      <DependentUpon>Core_Copper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Core_CopperT.aspx.cs">
+      <DependentUpon>Core_CopperT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Core_CopperT.aspx.designer.cs">
+      <DependentUpon>Core_CopperT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\DEFECT.aspx.cs">
+      <DependentUpon>DEFECT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\DEFECT.aspx.designer.cs">
+      <DependentUpon>DEFECT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\DEFECTT.aspx.cs">
+      <DependentUpon>DEFECTT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\DEFECTT.aspx.designer.cs">
+      <DependentUpon>DEFECTT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\HYPOTENUSE_ANGLE.aspx.cs">
+      <DependentUpon>HYPOTENUSE_ANGLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\HYPOTENUSE_ANGLE.aspx.designer.cs">
+      <DependentUpon>HYPOTENUSE_ANGLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\HYPOTENUSE_ANGLET.aspx.cs">
+      <DependentUpon>HYPOTENUSE_ANGLET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\HYPOTENUSE_ANGLET.aspx.designer.cs">
+      <DependentUpon>HYPOTENUSE_ANGLET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\IF_HYPOTENUSE.aspx.cs">
+      <DependentUpon>IF_HYPOTENUSE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\IF_HYPOTENUSE.aspx.designer.cs">
+      <DependentUpon>IF_HYPOTENUSE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\IF_HYPOTENUSET.aspx.cs">
+      <DependentUpon>IF_HYPOTENUSET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\IF_HYPOTENUSET.aspx.designer.cs">
+      <DependentUpon>IF_HYPOTENUSET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\IMPEDANCE.aspx.cs">
+      <DependentUpon>IMPEDANCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\IMPEDANCE.aspx.designer.cs">
+      <DependentUpon>IMPEDANCE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\IMPEDANCET.aspx.cs">
+      <DependentUpon>IMPEDANCET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\IMPEDANCET.aspx.designer.cs">
+      <DependentUpon>IMPEDANCET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\MINIMUM_HOLE.aspx.cs">
+      <DependentUpon>MINIMUM_HOLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\MINIMUM_HOLE.aspx.designer.cs">
+      <DependentUpon>MINIMUM_HOLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\MINIMUM_HOLET.aspx.cs">
+      <DependentUpon>MINIMUM_HOLET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\MINIMUM_HOLET.aspx.designer.cs">
+      <DependentUpon>MINIMUM_HOLET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\MOLDING_STYLE.aspx.cs">
+      <DependentUpon>MOLDING_STYLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\MOLDING_STYLE.aspx.designer.cs">
+      <DependentUpon>MOLDING_STYLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\MOLDING_STYLET.aspx.cs">
+      <DependentUpon>MOLDING_STYLET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\MOLDING_STYLET.aspx.designer.cs">
+      <DependentUpon>MOLDING_STYLET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\MOLDING_TOLERANCE.aspx.cs">
+      <DependentUpon>MOLDING_TOLERANCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\MOLDING_TOLERANCE.aspx.designer.cs">
+      <DependentUpon>MOLDING_TOLERANCE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\MOLDING_TOLERANCET.aspx.cs">
+      <DependentUpon>MOLDING_TOLERANCET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\MOLDING_TOLERANCET.aspx.designer.cs">
+      <DependentUpon>MOLDING_TOLERANCET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Out_Copper.aspx.cs">
+      <DependentUpon>Out_Copper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Out_Copper.aspx.designer.cs">
+      <DependentUpon>Out_Copper.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Out_CopperT.aspx.cs">
+      <DependentUpon>Out_CopperT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Out_CopperT.aspx.designer.cs">
+      <DependentUpon>Out_CopperT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\PANEL.aspx.cs">
+      <DependentUpon>PANEL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\PANEL.aspx.designer.cs">
+      <DependentUpon>PANEL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\PANELT.aspx.cs">
+      <DependentUpon>PANELT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\PANELT.aspx.designer.cs">
+      <DependentUpon>PANELT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\PANEL_NEED.aspx.cs">
+      <DependentUpon>PANEL_NEED.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\PANEL_NEED.aspx.designer.cs">
+      <DependentUpon>PANEL_NEED.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\PANEL_NEEDT.aspx.cs">
+      <DependentUpon>PANEL_NEEDT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\PANEL_NEEDT.aspx.designer.cs">
+      <DependentUpon>PANEL_NEEDT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\PLANK_THICKNESS.aspx.cs">
+      <DependentUpon>PLANK_THICKNESS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\PLANK_THICKNESS.aspx.designer.cs">
+      <DependentUpon>PLANK_THICKNESS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\PLANK_THICKNESST.aspx.cs">
+      <DependentUpon>PLANK_THICKNESST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\PLANK_THICKNESST.aspx.designer.cs">
+      <DependentUpon>PLANK_THICKNESST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\PLANK_TOLERANCE.aspx.cs">
+      <DependentUpon>PLANK_TOLERANCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\PLANK_TOLERANCE.aspx.designer.cs">
+      <DependentUpon>PLANK_TOLERANCE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\PLANK_TOLERANCET.aspx.cs">
+      <DependentUpon>PLANK_TOLERANCET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\PLANK_TOLERANCET.aspx.designer.cs">
+      <DependentUpon>PLANK_TOLERANCET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\PLANK_TYPET.aspx.cs">
+      <DependentUpon>PLANK_TYPET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\PLANK_TYPET.aspx.designer.cs">
+      <DependentUpon>PLANK_TYPET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\PLANK_TYPE.aspx.cs">
+      <DependentUpon>PLANK_TYPE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\PLANK_TYPE.aspx.designer.cs">
+      <DependentUpon>PLANK_TYPE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Solder_Mask.aspx.cs">
+      <DependentUpon>Solder_Mask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Solder_Mask.aspx.designer.cs">
+      <DependentUpon>Solder_Mask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Solder_MaskT.aspx.cs">
+      <DependentUpon>Solder_MaskT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Solder_MaskT.aspx.designer.cs">
+      <DependentUpon>Solder_MaskT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Spec.aspx.cs">
+      <DependentUpon>Spec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Spec.aspx.designer.cs">
+      <DependentUpon>Spec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\SpecT.aspx.cs">
+      <DependentUpon>SpecT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\SpecT.aspx.designer.cs">
+      <DependentUpon>SpecT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Surface_Thickness.aspx.cs">
+      <DependentUpon>Surface_Thickness.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Surface_Thickness.aspx.designer.cs">
+      <DependentUpon>Surface_Thickness.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Surface_ThicknessT.aspx.cs">
+      <DependentUpon>Surface_ThicknessT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Surface_ThicknessT.aspx.designer.cs">
+      <DependentUpon>Surface_ThicknessT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Surface_Treatment.aspx.cs">
+      <DependentUpon>Surface_Treatment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Surface_Treatment.aspx.designer.cs">
+      <DependentUpon>Surface_Treatment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\Surface_TreatmentT.aspx.cs">
+      <DependentUpon>Surface_TreatmentT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\Surface_TreatmentT.aspx.designer.cs">
+      <DependentUpon>Surface_TreatmentT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\THICKNESS_COPPER.aspx.cs">
+      <DependentUpon>THICKNESS_COPPER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\THICKNESS_COPPER.aspx.designer.cs">
+      <DependentUpon>THICKNESS_COPPER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\THICKNESS_COPPERT.aspx.cs">
+      <DependentUpon>THICKNESS_COPPERT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\THICKNESS_COPPERT.aspx.designer.cs">
+      <DependentUpon>THICKNESS_COPPERT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\VCUT_ANGLE.aspx.cs">
+      <DependentUpon>VCUT_ANGLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\VCUT_ANGLE.aspx.designer.cs">
+      <DependentUpon>VCUT_ANGLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\VCUT_ANGLET.aspx.cs">
+      <DependentUpon>VCUT_ANGLET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\VCUT_ANGLET.aspx.designer.cs">
+      <DependentUpon>VCUT_ANGLET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\VCUT_DISABLED.aspx.cs">
+      <DependentUpon>VCUT_DISABLED.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\VCUT_DISABLED.aspx.designer.cs">
+      <DependentUpon>VCUT_DISABLED.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareNature\VCUT_DISABLEDT.aspx.cs">
+      <DependentUpon>VCUT_DISABLEDT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareNature\VCUT_DISABLEDT.aspx.designer.cs">
+      <DependentUpon>VCUT_DISABLEDT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WDate.aspx.cs">
+      <DependentUpon>WDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WDate.aspx.designer.cs">
+      <DependentUpon>WDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService1.asmx.cs">
+      <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="xizheimg.aspx.cs">
+      <DependentUpon>xizheimg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="xizheimg.aspx.designer.cs">
+      <DependentUpon>xizheimg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSite.Master.cs">
+      <DependentUpon>XSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSite.Master.designer.cs">
+      <DependentUpon>XSite.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Print_Model\ERP出货单格式_model.xlsx" />
+    <Content Include="Print_Model\ERP采购订单格式_model.xlsx" />
+    <Content Include="Print_Model\ERP客户订单格式_model.xlsx" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\pcb-erp-test.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <Content Include="供应商对账单.xls" />
+    <Content Include="客户对账单.xls" />
+    <Content Include="XSite.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="File\" />
+    <Folder Include="PrintFile\" />
+    <Folder Include="Print\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>12782</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

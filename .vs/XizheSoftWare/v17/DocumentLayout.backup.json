@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SZ HY Products\\pcb erp\u4F9B\u7528\u6237\u6D4B\u8BD5\u7248\u672C\\pcberp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC44F4E-8832-45A3-8A00-9D53176B9B6D}|WPSS\\WPSS.csproj|d:\\sz hy products\\pcb erp\u4F9B\u7528\u6237\u6D4B\u8BD5\u7248\u672C\\pcberp\\wpss\\purchasemanage\\purchaset.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC44F4E-8832-45A3-8A00-9D53176B9B6D}|WPSS\\WPSS.csproj|solutionrelative:wpss\\purchasemanage\\purchaset.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC44F4E-8832-45A3-8A00-9D53176B9B6D}|WPSS\\WPSS.csproj|d:\\sz hy products\\pcb erp\u4F9B\u7528\u6237\u6D4B\u8BD5\u7248\u672C\\pcberp\\wpss\\sellmanage\\ordert.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1AC44F4E-8832-45A3-8A00-9D53176B9B6D}|WPSS\\WPSS.csproj|solutionrelative:wpss\\sellmanage\\ordert.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AC44F4E-8832-45A3-8A00-9D53176B9B6D}|WPSS\\WPSS.csproj|d:\\sz hy products\\pcb erp\u4F9B\u7528\u6237\u6D4B\u8BD5\u7248\u672C\\pcberp\\wpss\\sellmanage\\ordert.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{1AC44F4E-8832-45A3-8A00-9D53176B9B6D}|WPSS\\WPSS.csproj|solutionrelative:wpss\\sellmanage\\ordert.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PurchaseT.aspx.cs",
+              "DocumentMoniker": "D:\\SZ HY Products\\pcb erp\u4F9B\u7528\u6237\u6D4B\u8BD5\u7248\u672C\\pcberp\\WPSS\\PurchaseManage\\PurchaseT.aspx.cs",
+              "RelativeDocumentMoniker": "WPSS\\PurchaseManage\\PurchaseT.aspx.cs",
+              "ToolTip": "D:\\SZ HY Products\\pcb erp\u4F9B\u7528\u6237\u6D4B\u8BD5\u7248\u672C\\pcberp\\WPSS\\PurchaseManage\\PurchaseT.aspx.cs",
+              "RelativeToolTip": "WPSS\\PurchaseManage\\PurchaseT.aspx.cs",
+              "ViewState": "AgIAAD4DAAAAAAAAAAApwCMDAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T09:05:58.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderT.aspx.cs",
+              "DocumentMoniker": "D:\\SZ HY Products\\pcb erp\u4F9B\u7528\u6237\u6D4B\u8BD5\u7248\u672C\\pcberp\\WPSS\\SellManage\\OrderT.aspx.cs",
+              "RelativeDocumentMoniker": "WPSS\\SellManage\\OrderT.aspx.cs",
+              "ToolTip": "D:\\SZ HY Products\\pcb erp\u4F9B\u7528\u6237\u6D4B\u8BD5\u7248\u672C\\pcberp\\WPSS\\SellManage\\OrderT.aspx.cs",
+              "RelativeToolTip": "WPSS\\SellManage\\OrderT.aspx.cs",
+              "ViewState": "AgIAABwDAAAAAAAAAAApwA0DAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T09:05:22.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderT.aspx",
+              "DocumentMoniker": "D:\\SZ HY Products\\pcb erp\u4F9B\u7528\u6237\u6D4B\u8BD5\u7248\u672C\\pcberp\\WPSS\\SellManage\\OrderT.aspx",
+              "RelativeDocumentMoniker": "WPSS\\SellManage\\OrderT.aspx",
+              "ToolTip": "D:\\SZ HY Products\\pcb erp\u4F9B\u7528\u6237\u6D4B\u8BD5\u7248\u672C\\pcberp\\WPSS\\SellManage\\OrderT.aspx",
+              "RelativeToolTip": "WPSS\\SellManage\\OrderT.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-02-17T09:05:19.788Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
