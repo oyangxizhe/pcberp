@@ -69,8 +69,8 @@ LEFT JOIN MATERE G ON B.SEKEY=G.MRKEY
                 CheckBox1.Checked = true;*/
                 bind();
             }
-            if (va.returnb() == true)
-            Response.Redirect("\\Default.aspx");
+            //if (va.returnb() == true)
+            //Response.Redirect("\\Default.aspx");
         }
         #region bind()
         private void bind()

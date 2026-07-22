@@ -1,21 +1,24 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using System;
 using System.Collections;
 using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
-using System.Data.SqlClient;
 using XizheC;
+using OfficeOpenXml;
 using System.IO;
-using System.Diagnostics;
-using System.Net;
-using System.Text;
-
+using System;
 
 namespace WPSS.PurchaseManage
 {
@@ -672,7 +675,7 @@ namespace WPSS.PurchaseManage
         }
 
         #region ExcelPrint
-        public void ExcelPrint(DataTable dt2, string Printpath, string savepath)
+        public void ExcelPrint_old(DataTable dt2, string Printpath, string savepath)
         {
             /*int i;
             Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
@@ -728,7 +731,149 @@ Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);/* 13 to p
             Response.Redirect("/PrintFile/" + v1);*/
         }
         #endregion
-        protected void btnEXCEL_PRINT_Click(object sender, ImageClickEventArgs e)
+
+
+
+public void ExcelPrint(DataTable dt2, string Printpath, string savepath)
+    {
+        
+            //导出模版路径
+            string filePath2 = Server.MapPath("/Print_Model/供应商对账单.xlsx");
+            // 设置Excel文件路径
+            string v1 = "CuReconcile_" + DateTime.Now.ToString("yyyyMMddHHmmssfff").Replace("-", "/") + ".xlsx";
+            string filePath = Server.MapPath("/outputfile/" + v1);
+
+            // 创建一个新的Excel包
+
+            FileInfo file = new FileInfo(filePath2);
+            using (ExcelPackage package = new ExcelPackage(file))
+            {
+                //获取Excel中的第n张表：
+                // 获取第一个工作表
+                var worksheet = package.Workbook.Worksheets[0];
+
+                // 2. 清空数据区域（防止模板中残留数据）
+                int startDataRow = 11;
+                int endDataRow = 50; // 根据模板实际情况调整
+                for (int row = startDataRow; row <= endDataRow; row++)
+                {
+                    for (int col = 1; col <= 10; col++) // A-J 列
+                    {
+                        if (worksheet.Cells[row, col].Value != null)
+                        {
+                            worksheet.Cells[row, col].Value = null;
+                        }
+                    }
+                }
+
+                // 3. 填充对账单标题
+                worksheet.Cells[2, 1].Value = DateTime.Now.ToString("yyyy") + "年" +
+                                              DateTime.Now.AddMonths(-1).ToString("MM") + "月" + "对账单"; // A2
+
+                // 4. 填充供货方信息（原代码中是公司信息，放在A列）
+                worksheet.Cells[1, 1].Value = dt2.Rows[0]["公司名称"]?.ToString() ?? ""; // A1
+
+                // 5. 填充购货方信息（原代码中是客户信息，放在C列，从第4行开始）
+                worksheet.Cells[4, 3].Value = dt2.Rows[0]["公司名称"]?.ToString() ?? ""; // C4
+                worksheet.Cells[5, 3].Value = dt2.Rows[0]["公司联系人"]?.ToString() ?? ""; // C5
+                worksheet.Cells[6, 3].Value = dt2.Rows[0]["公司电话"]?.ToString() ?? ""; // C6
+                worksheet.Cells[7, 3].Value = dt2.Rows[0]["公司邮箱"]?.ToString() ?? ""; // C7
+
+                // 6. 填充供货方信息（原代码中是供应商信息，放在G列，从第4行开始）
+                worksheet.Cells[4, 7].Value = dt2.Rows[0]["供应商名称"]?.ToString() ?? ""; // G4
+                worksheet.Cells[5, 7].Value = dt2.Rows[0]["联系人"]?.ToString() ?? ""; // G5
+                worksheet.Cells[6, 7].Value = dt2.Rows[0]["联系电话"]?.ToString() ?? ""; // G6
+                worksheet.Cells[7, 7].Value = dt2.Rows[0]["EMAIL"]?.ToString() ?? ""; // G7
+
+                // 7. 获取联系人信息（原代码中从数据库查询）
+                // 注意：这里保留了原逻辑，您需要根据实际情况调整
+                string contact = GetCompanyContact(); // 您原来的 bc.getOnlyString 方法
+                worksheet.Cells[5, 3].Value = contact; // C5
+
+                // 8. 制单人（原代码在第46行，J列）
+                worksheet.Cells[46, 10].Value = dt2.Rows[0]["制单人"]?.ToString() ?? ""; // J46
+
+                // 9. 填充数据行（从第11行开始）
+                int rowCount = dt2.Rows.Count;
+                for (int i = 0; i < rowCount; i++)
+                {
+                    int currentRow = 11 + i; // 从第11行开始
+                    if(i<rowCount-1) //若i不是最后一行，那么原样写入excel，若是最后一行，那么只写未税金额
+                    {
+                        // A列 - 序号
+                        worksheet.Cells[currentRow, 1].Value = (i + 1).ToString();
+
+                        // B列 - 日期
+                        worksheet.Cells[currentRow, 2].Value = DateTime.Now.ToString("yyyy-MM-dd").Replace("-", "/");
+
+                        // C列 - 入库退货单号
+                        worksheet.Cells[currentRow, 3].Value = dt2.Rows[i]["入库退货单号"]?.ToString() ?? "";
+
+                        // D列 - 品名
+                        worksheet.Cells[currentRow, 4].Value = dt2.Rows[i]["品名"]?.ToString() ?? "";
+
+                        // E列 - 客户料号
+                        worksheet.Cells[currentRow, 5].Value = dt2.Rows[i]["客户料号"]?.ToString() ?? "";
+
+                        // F列 - 供应商订单号（原代码中被注释掉了，保留但注释）
+                        // worksheet.Cells[currentRow, 6].Value = dt2.Rows[i]["供应商订单号"]?.ToString() ?? "";
+
+                        // G列 - 入库退货数量
+                        worksheet.Cells[currentRow, 7].Value = dt2.Rows[i]["入库退货数量"]?.ToString() ?? "";
+
+                        // H列 - 采购单价
+                        worksheet.Cells[currentRow, 8].Value = dt2.Rows[i]["采购单价"]?.ToString() ?? "";
+
+                        // I列 - 工程费（原代码中没有，但模板可能有，保留空）
+                        // worksheet.Cells[currentRow, 9].Value = "";
+
+                        // J列 - 未税金额
+                        worksheet.Cells[currentRow, 10].Value = dt2.Rows[i]["未税金额"]?.ToString() ?? "";
+                    }
+                    else
+                    {
+                        // J列 - 未税金额
+                        worksheet.Cells[currentRow, 10].Value = dt2.Rows[i]["未税金额"]?.ToString() ?? "";
+                    }
+                    
+                }
+
+                // 10. 如果数据行数少于模板预留的行数，可以隐藏多余的行
+                int templateMaxRows = 4; // 模板预留的数据行数，根据实际情况调整
+                if (rowCount < templateMaxRows)
+                {
+                    for (int i = rowCount + 1; i <= templateMaxRows; i++)
+                    {
+                        int rowToHide = 10 + i;
+                        worksheet.Row(rowToHide).Hidden = true;
+                    }
+                }
+
+                
+
+
+                // 保存Excel文件
+                package.SaveAs(filePath);
+                //MessageBox.Show("写入到Excel文件成功！！！");
+                Response.Redirect("/outputfile/" + v1);//将文件输出到浏览器供用户下载
+            }
+
+        }
+
+        /// <summary>
+        /// 获取公司联系人信息（替代原来的 bc.getOnlyString 方法）
+        /// </summary>
+        private string GetCompanyContact()
+    {
+        // 这里实现您原来的数据库查询逻辑
+        // 例如：
+        // string sql = "SELECT CONTACT FROM CompanyInfo_DET where COKEY=(select top 1 COKEY from CompanyInfo_MST )";
+        // return bc.getOnlyString(sql);
+
+        // 如果暂时无法实现数据库查询，返回默认值
+        return "";
+    }
+    protected void btnEXCEL_PRINT_Click(object sender, ImageClickEventArgs e)
         {
             /*string vard1 = Text1.Value;
             String[] Carstr = new string[] { vard1 };

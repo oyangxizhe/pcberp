@@ -16,6 +16,9 @@ using System.IO;
 using System.Diagnostics;
 using System.Net;
 using System.Text;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
+using System.Drawing;
 
 
 
@@ -573,7 +576,7 @@ namespace WPSS.SellManage
                         return;
                     }
 
-                    ExcelPrint(dt, v1, v2);
+                    ExcelPrint_for_epplus(dt, v1, v2);
                     try
                     {
 
@@ -712,10 +715,10 @@ namespace WPSS.SellManage
  
         }
         #region ExcelPrint
-        public void ExcelPrint(DataTable dt2, string Printpath, string savepath)
+        public void ExcelPrint_old(DataTable dt2, string Printpath, string savepath)
         {
-            /*int i;
-            Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
+            int i;
+           /* Microsoft.Office.Interop.Excel.Application application = new Microsoft.Office.Interop.Excel.Application();
             Excel.Workbook workbook;
             Excel.Worksheet worksheet;
             int m = dt2.Rows.Count - 1;
@@ -755,7 +758,7 @@ Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);/* 13 to p
                 worksheet.Cells[11 + 1 * i, "H"] = dt2.Rows[i]["销售单价"].ToString();
                 worksheet.Cells[11 + 1 * i, "I"] = dt2.Rows[i]["工程费"].ToString();
                 worksheet.Cells[11 + 1 * i, "J"] = dt2.Rows[i]["未税金额"].ToString();
-                //worksheet.PrintOut(1, 1, 1, false, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                worksheet.PrintOut(1, 1, 1, false, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
                 //csharpExcelPrint(sfdg.FileName);
                 workbook.SaveAs(v2);
                 //csharpExcelPrint(sfdg.FileName);
@@ -768,6 +771,83 @@ Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);/* 13 to p
             Response.Redirect("/PrintFile/" + v1);*/
         }
         #endregion
+        // 首先需要安装 EPPlus NuGet 包
+// Install-Package EPPlus
+
+
+
+
+public void ExcelPrint_for_epplus(DataTable dt2, string Printpath, string savepath)
+    {
+            //导出模版路径
+            string filePath2 = Server.MapPath("/Print_Model/客户对账单.xlsx");
+            // 设置Excel文件路径
+            string v1 = "CuReconcile_" + DateTime.Now.ToString("yyyyMMddHHmmssfff").Replace("-", "/") + ".xlsx";
+            string filePath = Server.MapPath("/outputfile/" + v1);
+
+            // 创建一个新的Excel包
+
+            FileInfo file = new FileInfo(filePath2);
+            using (ExcelPackage package = new ExcelPackage(file))
+            {
+                //获取Excel中的第n张表：
+
+                ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+
+                worksheet.Cells[1, 1].Value = dt2.Rows[0]["公司名称"].ToString(); // A1
+                worksheet.Cells[4, 7].Value = dt2.Rows[0]["公司名称"].ToString(); // G4
+                worksheet.Cells[5, 7].Value = dt2.Rows[0]["公司联系人"].ToString(); // G5
+                worksheet.Cells[6, 7].Value = dt2.Rows[0]["公司电话"].ToString(); // G6
+                worksheet.Cells[7, 7].Value = dt2.Rows[0]["公司邮箱"].ToString(); // G7
+
+                // 对账单标题
+                worksheet.Cells[2, 1].Value = DateTime.Now.ToString("yyyy") + "年" +
+                                              DateTime.Now.AddMonths(-1).ToString("MM") + "月" + "对账单"; // A2
+
+                // 客户信息
+                worksheet.Cells[4, 3].Value = dt2.Rows[0]["客户名称"].ToString(); // C4
+                worksheet.Cells[5, 3].Value = dt2.Rows[0]["联系人"].ToString(); // C5
+                worksheet.Cells[6, 3].Value = dt2.Rows[0]["联系电话"].ToString(); // C6
+                worksheet.Cells[7, 3].Value = dt2.Rows[0]["EMAIL"].ToString(); // C7
+
+                // 制单人
+                worksheet.Cells[41, 9].Value = dt2.Rows[0]["制单人"].ToString(); // I41
+
+                // 4. 填充数据行（从第11行开始）
+                int rowCount = dt2.Rows.Count;
+                for (int i = 0; i < rowCount; i++)
+                {
+                    int currentRow = 11 + i; // 从第11行开始
+                    if (i < rowCount - 1)
+                    {
+                        worksheet.Cells[currentRow, 1].Value = (i + 1).ToString();                    // A列 - 序号
+                        worksheet.Cells[currentRow, 2].Value = DateTime.Now.ToString("yyyy-MM-dd").Replace("-", "/"); // B列 - 日期
+                        worksheet.Cells[currentRow, 3].Value = dt2.Rows[i]["销货销退单号"].ToString(); // C列
+                        worksheet.Cells[currentRow, 4].Value = dt2.Rows[i]["品名"].ToString();         // D列
+                        worksheet.Cells[currentRow, 5].Value = dt2.Rows[i]["客户料号"].ToString();     // E列
+                        worksheet.Cells[currentRow, 6].Value = dt2.Rows[i]["客户订单号"].ToString();   // F列
+                        worksheet.Cells[currentRow, 7].Value = dt2.Rows[i]["销货销退数量"].ToString(); // G列
+                        worksheet.Cells[currentRow, 8].Value = dt2.Rows[i]["销售单价"].ToString();     // H列
+                        worksheet.Cells[currentRow, 9].Value = dt2.Rows[i]["工程费"].ToString();       // I列
+                        worksheet.Cells[currentRow, 10].Value = dt2.Rows[i]["未税金额"].ToString();    // J列
+                    }
+                    else
+                    {
+                        worksheet.Cells[currentRow, 10].Value = dt2.Rows[i]["未税金额"].ToString();    // J列
+                    }
+        
+                
+                
+                }
+
+
+                // 保存Excel文件
+                package.SaveAs(filePath);
+                //MessageBox.Show("写入到Excel文件成功！！！");
+                Response.Redirect("/outputfile/" + v1);//将文件输出到浏览器供用户下载
+            }
+
+        }
         protected void btnEXCEL_PRINT_Click(object sender, ImageClickEventArgs e)
         {
             /*string vard1 = Text1.Value;
